@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "outDir": "build",
+    "baseUrl": "./src",
+    "allowJs": false,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "importsNotUsedAsValues": "error",
+    "isolatedModules": true,
+    "lib": [
+      "esnext"
+    ],
+    "pretty": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "es2017"
+  },
+  "include": [
+    "./src"
+  ]
+}

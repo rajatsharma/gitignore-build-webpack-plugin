@@ -1,0 +1,13 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  "[json]": {
+    "editor.formatOnSave": true,
+    "editor.suggest.insertMode": "replace"
+  },
+  "[jsonc]": {
+    "editor.formatOnSave": true,
+    "editor.suggest.insertMode": "replace"
+  }
+}
