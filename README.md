@@ -2,7 +2,7 @@
 
 _Never mention webpack build directory in your gitignore_
 
-No need to add an extra gitignore entry for your webpack output. This plugin automagically excludes webpack output from git.
+No need to add gitignore entry for your webpack output. This plugin automagically excludes webpack output from git.
 
 ## Installation
 
