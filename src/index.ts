@@ -1,6 +1,4 @@
-import type { Compiler } from 'webpack';
-import fs from 'fs';
-import path from 'path';
+import type { Compiler, compilation } from 'webpack';
 
 export default class GitignoreBuildWebpackPlugin {
   // eslint-disable-next-line class-methods-use-this
@@ -11,16 +9,18 @@ export default class GitignoreBuildWebpackPlugin {
 
     compiler.hooks.emit.tapAsync(
       'GitignoreBuildWebpackPlugin',
-      (_, callback: () => void) => {
-        if (!compiler.options.output?.path) {
-          callback();
-          return;
-        }
+      (webpackCompilation: compilation.Compilation, callback: () => void) => {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access,no-param-reassign
+        webpackCompilation.assets['.gitignore'] = {
+          source() {
+            return '*';
+          },
+          size() {
+            return 1;
+          },
+        };
 
-        fs.writeFile(path.resolve(compiler.options.output?.path, '.gitignore'), '*', 'utf8', (err) => {
-          if (err) console.log(err);
-          callback();
-        });
+        callback();
       },
     );
   }
